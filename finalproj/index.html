@@ -1,0 +1,224 @@
+<!--
+Project: 5 
+Name: Arza Henrie
+Submitted: 4/26/23
+ 
+I declare that the following source code was written by me, or provided
+by the instructor for this project. I understand that copying source
+code from any other source, providing source code to another student, 
+or leaving my code on a public web site constitutes cheating.
+I acknowledge that  If I am found in violation of this policy this may result
+in a zero grade, a permanent record on file and possibly immediate failure of the class.
+
+REFLECTION:
+Regex is the hardest thing I have had to wrap my mind around in this class. I got some of the regex validation to work
+but I could not get the correct page to pop up. I spent hours trying to figure it out to no avail. 
+
+--SELF GRADE--
+REFACTOR JS                 B 
+VALIDATION LIBRARY          A
+FLEXBOX LAYOUT/FORM HTML    A
+ADDITIONAL COMMENTS:
+
+
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Project 5</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="js/main.js"></script>
+    <script defer src="js/page.js"></script>
+    <script defer src="js/validation.js"></script>
+  </head>
+  <body>
+    <div class="grid-container">
+      <header class="header">
+        <img id='logo' class="logo" src="pictures/eye.gif" alt="Dont poke my eyes">
+        <h1>Security and OSINT</h1>
+      </header>
+      <menu class="menunav">
+        <nav>
+          <button class='menuBtn selected' onclick="" name="home">Home</button><br>
+          <button class='menuBtn' name="info">More Info</button><br>
+          <button class='menuBtn' name="contact">Contact</button><br>
+          <button class="menuBtn" name="log">Log Visit</button><br>
+          <a href="#" id='themeChange'>Like Sweets?</a>
+        </nav>
+      </menu>
+      <main class="main">
+        <!--HOME SECTION-->
+        <section id="homeSection" class="show">
+          <h2>What is OSINT and Security?</h2>
+          <article id="OSINT">
+            <div class="osint-content">
+              <figure>
+                <img src="pictures/osintmain.jpg" id="osintPic" alt="OSINT Image" style="width:500px">
+                <figcaption>The number of OSINT tools and services is constantly growing (image via osintframework.com)
+                </figcaption>
+              </figure>
+              <div class="osint-text">
+                <h3>OSINT</h3>
+                  <p>OSINT stands for Open Source Intelligence and refers to the process of collecting and analyzing
+                    publicly available information to obtain valuable insights and intelligence. OSINT is a key tool used in
+                    fields such as law enforcement, military intelligence, journalism, and corporate security to gather
+                    information about individuals, organizations, and events.</p>
+                  <br>
+                  <p>The sources of OSINT can be vast and diverse, ranging from social media and online forums to public
+                    records and news articles. By leveraging various tools and techniques, OSINT practitioners are able to
+                    extract and analyze information to gain a deeper understanding of their subject matter.</p>
+                  <br>
+                  <p>In recent years, OSINT has become increasingly important as a means of understanding and responding to
+                    complex issues such as cybersecurity threats, terrorism, and disinformation campaigns. With the rise of
+                    digital communication and the explosion of data available online, the field of OSINT is constantly
+                    evolving and presents exciting opportunities for those interested in pursuing a career in intelligence
+                    and analysis.</p>
+              </div>
+            </div>
+        </article>
+        <article id="SEC">
+          <div class="sec-content">
+            <img src="pictures/hack.jpg" alt="hackerman">
+            <div class="sec-text">
+              <h3>Security</h3>
+              <p>Online security refers to the practices and measures that individuals and organizations take to protect
+                their digital information from unauthorized access, theft, or damage. As more and more of our personal
+                and professional lives move online, online security has become increasingly important in safeguarding
+                our sensitive data.</p>
+              <br>
+              <p>Online security includes a range of measures, such as using strong and unique passwords, regularly
+                updating software and operating systems, enabling two-factor authentication, and being vigilant against
+                phishing scams and other types of online fraud. It also involves protecting against malware and viruses,
+                as well as safeguarding our online activities from prying eyes through the use of virtual private
+                networks (VPNs) and other privacy-enhancing tools.</p>
+              <br>
+              <p>Given the constantly evolving nature of cybersecurity threats, online security is an ongoing process
+                that requires continual attention and updating. However, by following best practices and being proactive
+                in our approach to online security, we can minimize the risk of becoming victims of cybercrime and
+                ensure that our digital lives remain safe and secure.</p>
+            </div>
+          </div>
+        </article>
+      </section>
+      <!--CONTACT SECTION-->
+      <div id="contactPage">
+        <section class="hide" id="contactSection">
+          <h2>Let's Get in Touch</h2>
+          <div class="fake-subscribe">
+            <h3>Subscribe to our SpamLetter</h3>
+            <p>Enter your email address below to receive spam:</p>
+            <form>
+              <input type="text" placeholder="Email address">
+              <button type="submit">Subscribe</button>
+            </form>
+          </div>
+        </section>
+      </div>
+        <!--MORE INFO-->
+        <section class="hide" name="addInfo" id="infoSection">
+          <div id="addInfo">
+            <h2>Additional Information</h2>
+            <div class="info-content">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/ImWJgDQ-_ek"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+            </div>
+          </div>
+        </section>
+        <!--Log Info-->
+        <section class="hide" id="logSection">
+          <h1>Visitor Form</h1>
+          <div class="container" >
+            <div id="success" class="successMsg" style="display:none">
+              Thank you for logging your visit!
+            </div>
+            <form id="myform" novalidate method="GET" action="https://wp.zybooks.com/form-viewer.php">
+              <ul class="flex">
+                <li class="section-display">
+                  <label for="first-name">First Name</label>
+                  <input type="text" id="first-name" name="first-name" placeholder="Enter your first name here">
+                  <div class="errorMsg"></div>
+                </li>
+                <li >
+                  <label for="last-name">Last Name</label>
+                  <input type="text"  id="last-name" name="last-name" placeholder="Enter your last name here">
+                  <div class="errorMsg"></div>
+                </li>
+                <li >
+                  <label for="address">Address</label>
+                  <input type="text"  id="address" name="address" placeholder="Enter your address here">
+                  <div class="errorMsg"></div>
+                </li>
+                <li >
+                  <label for="city">City</label>
+                  <input type="text"  id="city" name="city" placeholder="Enter your city here">
+                  <div class="errorMsg"></div>
+                </li>
+                <li >
+                  <label for="state">State</label>
+                  <input type="text"  id="state" name="state" placeholder="Enter your state here">
+                  <div class="errorMsg"></div>
+                </li>
+                <li >
+                  <label for="zip">Zip</label>
+                  <input type="text"  id="zip" name="zip" placeholder="Enter your zip code here">
+                  <div class="errorMsg"></div>
+                </li>
+                <li >
+                  <label for="email">Email</label>
+                  <input type="text" id="email" name="email" placeholder="Enter your email here">
+                  <div class="errorMsg"></div>
+                </li>
+                <li>
+                  <label for="phone">Phone</label>
+                  <input type="text" id="phone" placeholder="Enter your phone here">
+                  <div class="errorMsg"></div>
+                </li>
+                <li>
+                  <h2>How did you find my page</h2>
+                </li>
+                <li>
+                  <input type="checkbox" id='google' name='find-page' value="google">
+                  <label for="google">Google Search</label>
+                </li>
+                <li>
+                  <input type="checkbox" id='friend' name='find-page' value="friend">
+                  <label for="friend">Friend</label>
+                </li>
+                <li>
+                  <input type="checkbox" id='newspaper' name='find-page' value="newspaper">
+                  
+                  <label for="newspaper">News Paper</label>
+                  <div class="errorMsg"></div>
+                </li>
+                
+                <li>
+                  <label for="comment">Comments</label>
+                  <textarea rows="4" id="comment" placeholder="Enter your comments here"></textarea>
+                </li>
+                
+                <li>
+                  <button type="submit">Send</button>
+                </li>
+              </ul>
+            </form>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <div class="footinfo">
+          <ul><!--Links are not supposed to go anywhere, only for visuals (for now)-->
+            <li><a href="">PRODUCTS</a></li>
+            <li><a href="">SIGN UP FOR EMAIL</a></li>
+            <li><a href="">BECOME A MEMEBER</a></li>
+            <li><a href="">FEEDBACK</a></li>
+          </ul>
+          <p class="discl">© 2023 Osint, Inc. NO Rights Reserved</p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

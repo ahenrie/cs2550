@@ -1,0 +1,400 @@
+/*---------------------------------------------CHANGES AND FIXES----------------------------------------------------
+1.Additonal media queries for the forms .flex container
+2.
+*/
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: rgb(0, 0, 0);
+  margin: 15px;
+}
+
+/*Button*/
+.hide{
+  display:none;
+}
+.show{
+  display:block;
+}
+.menuBtn {
+  background-color: #000000;
+  color: white;
+  margin:5px 0px;
+}
+ .selected {
+  background-color:rgb(255, 255, 255);
+  color: #000000;
+}
+
+/*Define areas*/
+.header { grid-area: header; }
+.menunav { grid-area: menu; }
+.main { grid-area: main; }
+.footer { grid-area: footer; }
+
+/*Desktop layout*/
+.grid-container {
+  display: grid;
+  flex: auto;
+  background-color: rgb(255, 255, 255);
+  grid-template-areas:
+    'header header header header header header'
+    'menu main main main main main'
+    'footer footer footer footer footer footer';
+}
+
+/* Tablet layout */
+@media only screen and (max-width: 768px) {
+  .grid-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .header {
+    order: 1;
+    flex: 1 50%;
+  }
+  .menunav {
+    order: 2;
+    flex: 1 100%;
+  }
+  .main {
+    order: 3;
+    flex: 3 100%;
+  }
+  .footer {
+    order: 4;
+    flex: 1 100%;
+  }
+  .flex {
+    max-width: 100%;
+    margin: 0;
+  }
+  
+  .flex > li > label {
+    max-width: 100%;
+  }
+  
+  .flex li li input,
+  .flex li textarea {
+    width: 100%;
+    margin: 0;
+  }
+  
+  .flex > li + * {
+    margin-top: 10px;
+  }
+}
+
+/*Header with logo*/
+.header {
+  background-color: #181a1a;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  padding: 0; 
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header h1 {
+  align-self: center;
+  flex-grow: 1;
+}
+
+.logo {
+  padding: 2px;
+  width: 10%;
+}
+
+/*Navigation bar under menu tag*/
+.menunav {
+  margin: 0;
+  background-color: #000000;
+  font-size: 20px;
+  padding: 15px 50px;
+}
+
+
+.menunav ul {
+  color: white;
+  align-items: left;
+  padding: 0;
+  margin: 0;
+  font-size:100px;
+}
+
+.menunav li:hover {
+  background-color: rgb(41, 41, 41);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.menunav a {
+  color:#fa00d0;
+}
+
+.main {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  font-size: 20px;
+}
+
+/* Home page content formatting */
+.osint-content {
+  display: flex;
+  align-items: center;
+  flex-direction: column; /* Change to column for images above text */
+}
+
+.osint-text {
+  text-align: center;
+  margin-top: 20px; /* Add margin to separate image and text */
+}
+
+.osint-text p {
+  margin: 25px;
+}
+
+#OSINT figure {
+  font-size: x-small;
+  margin-bottom: 20px; /* Add margin to separate image and text */
+}
+
+.sec-content {
+  display: flex;
+  align-items: center;
+  flex-direction: column; /* Change to column for images above text */
+}
+
+.sec-text {
+  text-align: center;
+  margin-top: 20px; /* Add margin to separate image and text */
+}
+
+.sec-text p {
+  margin: 25px;
+}
+
+#SEC img {
+  width: 500px;
+  max-width: 100%; /* Set max-width to 100% to ensure image fits within container */
+  padding-bottom: 20px; /* Add padding to separate image and text */
+}
+
+/* Tablet layout */
+@media only screen and (max-width: 768px) {
+  .osint-content,
+  .sec-content {
+    flex-direction: column; /* Change to column for images above text */
+  }
+
+  #OSINT figure,
+  #SEC img {
+    width: 100%; /* Set image width to 100% for full width on smaller screens */
+    padding-bottom: 20px; /* Add padding to separate image and text */
+  }
+}
+
+/*Additional Information content formatting*/
+#addInfo {
+  text-align: center; /* Center the content horizontally */
+}
+
+#addInfo h2,
+#addInfo iframe {
+  display: inline-block; /* Use inline-block display to center the h2 and iframe elements */
+  margin: 0 auto; /* Use auto margins to center the h2 and iframe elements horizontally */
+}
+
+
+/*Contact Page Formatting*/
+#contactPage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-left: 25%;
+  padding-right: 25%;
+  padding-bottom: 3%;
+}
+
+.fake-subscribe {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 20px;
+  text-align: center;
+  
+}
+
+.fake-subscribe h3 {
+  margin-top: 0;
+}
+
+#contactForm {
+  margin-top: 20px;
+}
+
+.fake-subscribe input[type="text"] {
+  padding: 10px;
+  width: 60%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.fake-subscribe button[type="submit"] {
+  padding: 10px 20px;
+  border: none;
+  background-color: #000000;
+  color: #33ff00;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.fake-subscribe button[type="submit"]:hover {
+  background-color: #ff0000; /*gross booger green*/
+}
+
+/*----------------------------------------------------------------------------Form-----------------------------------------------------------------------*/
+#logSection {
+  background-color: #242424;
+  justify-content: center;
+  display: flexbox;
+  height: 100%;
+}
+
+#logSection h1 {
+  color: #ffffff;
+  font-size: xx-large;
+  padding-top: 20px;
+  justify-content: center;
+}
+
+.errorMsg {
+  color: red;
+}
+/*only show error information when 'was-validated' class is added to the input*/
+input.was-validated:invalid {
+  color: red;
+  border: 1px solid red;
+}
+
+input.was-validated:invalid ~ div {
+  display: block;
+}
+
+input:valid ~ div {
+  display: none;
+}
+
+input:invalid ~ div {
+  display: none;
+}
+
+.container {
+  width: auto;
+  margin: 1.75%;
+  padding-top: .5px;
+  background-color: #ffffff;
+}
+
+.container * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.flex {
+  list-style-type: none;
+  padding: 0;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.flex li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.flex li li input,
+.flex li textarea {
+  padding: 15px;
+  font: normal 18px/1.8 sans-serif;
+}
+
+.flex button {
+  margin: auto;
+  padding: 15px 30px;
+  font: normal 22px/1.5 sans-serif;
+  font-weight: bold;
+  border-radius: 5px;
+  background: #000000;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: .09em;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.flex button:hover {
+  background-color: #3e8e41;
+}
+
+.flex > li {
+  margin-bottom: 20px;
+} 
+
+.flex > li + * {
+  margin-top: 10px;
+}
+
+.flex > li > label {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 0 140px;
+  flex: 1 0 140px;
+  text-align: center;
+  max-width: 200px;
+  font-weight: bold;
+  color: #333333;
+}
+
+/*-----------------------------------------------------------Footer-------------------------------------------------------------------*/
+.footer {
+  display: flex;
+  flex-direction: row;
+  color: aliceblue;
+  background-color: #181a1a;
+  text-align: left;
+  padding: 5px 0;
+  font-size: 12px;
+}
+
+.footinfo li {
+  justify-items: center;
+  align-items: center;
+  color: white;
+}
+
+.discl {
+  margin-left: 10px;
+  align-self: flex-end;
+}
+
+/*get those dots outtaa here*/
+li {
+    list-style-type: none;
+    margin: 10%;
+}
+
+/*no text decoration for links*/
+a, a:link, a:hover {
+  text-decoration: none;
+  color: white;
+}
